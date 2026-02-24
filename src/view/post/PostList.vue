@@ -10,6 +10,13 @@ const handleCreate = () => {
   router.push({ name: 'post-create' })
 }
 
+const handleRead = async (id) => {
+  router.push({
+    name: 'post-read',
+    params: { postId: id },
+  })
+}
+
 onMounted(async () => {
   const res = await api.list()
   posts.value = res.data.list
@@ -96,6 +103,7 @@ onMounted(async () => {
               <tr
                 v-for="post in posts"
                 :key="post.id"
+                @click="handleRead(post.id)"
                 class="border-b border-gray-100 hover:bg-indigo-50 transition-colors cursor-pointer group"
               >
                 <td class="p-4 text-center text-gray-500">{{ post.id }}</td>

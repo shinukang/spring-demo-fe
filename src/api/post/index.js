@@ -10,4 +10,14 @@ const list = async () => {
   return await api.get('/post/list')
 }
 
-export default { create, list }
+// 게시글 상세 조회 api
+const read = async (id) => {
+  return await api.get('/post/read/' + id)
+}
+
+// 게시글 삭제 api
+const remove = async (id) => {
+  return await api.get('/post/delete/' + id)
+}
+
+export default { create, list, read, remove }
