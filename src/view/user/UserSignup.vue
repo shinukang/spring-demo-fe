@@ -111,11 +111,12 @@ const handleSignup = async () => {
 
           <div class="mt-6 text-center">
             <!-- 실제 구현 시 router-link 또는 @click을 통한 라우팅 적용 -->
-            <button
+            <RouterLink
+              :to="{ name: 'user-login' }"
               class="font-medium text-indigo-600 hover:text-indigo-500 transition-colors text-sm focus:outline-none"
             >
               로그인하러 가기
-            </button>
+            </RouterLink>
           </div>
         </div>
       </div>
