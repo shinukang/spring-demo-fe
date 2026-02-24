@@ -18,6 +18,11 @@ const router = createRouter({
       name: 'post-read',
       component: () => import('@/view/post/PostRead.vue'),
     },
+    {
+      path: '/post/update/:postId',
+      name: 'post-update',
+      component: () => import('@/view/post/PostUpdate.vue'),
+    },
   ],
 })
 

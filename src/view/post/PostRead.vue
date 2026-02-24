@@ -28,6 +28,14 @@ const handleDelete = async () => {
   }
 }
 
+const handleUpdate = async () => {
+  const postId = route.params.postId
+  router.push({
+    name: 'post-update',
+    params: { postId: postId },
+  })
+}
+
 onMounted(async () => {
   const postId = route.params.postId
   console.log(postId)
@@ -76,6 +84,7 @@ onMounted(async () => {
             </button>
             <div class="flex gap-2">
               <button
+                @click="handleUpdate"
                 class="px-5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white transition-colors font-medium text-sm"
               >
                 수정
