@@ -1,13 +1,20 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import api from '@/api/post'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 
 // 페이지가 단독으로 렌더링될 수 있도록 내부 임시 데이터 선언
 // 이전 요청에 따라 작성자 및 작성일 관련 속성은 제외함
 const post = ref({})
+
+const handleList = () => {
+  router.push({
+    name: 'post-list',
+  })
+}
 
 onMounted(async () => {
   const postId = route.params.postId
@@ -50,6 +57,7 @@ onMounted(async () => {
           <!-- 하단 버튼 영역 (기능 연결 제외, 시각적 요소만 배치) -->
           <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center">
             <button
+              @click="handleList"
               class="px-5 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors font-medium text-sm"
             >
               목록으로
