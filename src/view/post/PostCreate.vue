@@ -18,7 +18,7 @@ const handleCreate = async () => {
 }
 
 const handleCancel = () => {
-  router.push({ name: 'post-create' })
+  router.push({ name: 'post-list' })
 }
 </script>
 
