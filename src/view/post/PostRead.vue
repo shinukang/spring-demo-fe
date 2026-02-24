@@ -16,6 +16,18 @@ const handleList = () => {
   })
 }
 
+const handleDelete = async () => {
+  const postId = route.params.postId
+  try {
+    await api.remove(postId)
+    router.push({
+      name: 'post-list',
+    })
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 onMounted(async () => {
   const postId = route.params.postId
   console.log(postId)
@@ -69,6 +81,7 @@ onMounted(async () => {
                 수정
               </button>
               <button
+                @click="handleDelete"
                 class="px-5 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white transition-colors font-medium text-sm"
               >
                 삭제

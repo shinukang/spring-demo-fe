@@ -15,4 +15,9 @@ const read = async (id) => {
   return await api.get('/post/read/' + id)
 }
 
-export default { create, list, read }
+// 게시글 삭제 api
+const remove = async (id) => {
+  return await api.get('/post/delete/' + id)
+}
+
+export default { create, list, read, remove }
