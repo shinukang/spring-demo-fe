@@ -10,4 +10,9 @@ const list = async () => {
   return await api.get('/post/list')
 }
 
-export default { create, list }
+// 게시글 상세 조회 api
+const read = async (id) => {
+  return await api.get('/post/read/' + id)
+}
+
+export default { create, list, read }
