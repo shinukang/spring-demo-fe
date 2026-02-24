@@ -4,6 +4,16 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/user/signup',
+      name: 'user-signup',
+      component: () => import('@/view/user/UserSignup.vue'),
+    },
+    {
+      path: '/user/login',
+      name: 'user-login',
+      component: () => import('@/view/user/UserLogin.vue'),
+    },
+    {
       path: '/post/create',
       name: 'post-create',
       component: () => import('@/view/post/PostCreate.vue'),
